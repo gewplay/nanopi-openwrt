@@ -7,7 +7,7 @@ on:
     paths:
       - '.github/workflows/r2s_lean.yml'
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '00 00 * * *'
 
 jobs:
 
