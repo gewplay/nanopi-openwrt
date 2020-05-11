@@ -95,7 +95,7 @@ jobs:
           sed -i 's/option fullcone\t1/option fullcone\t0/' package/network/config/firewall/files/firewall.config
           sed -i '/8.8.8.8/d' package/base-files/files/root/setup.sh
           mv ../../scripts/check_wan4.sh package/base-files/files/usr/bin && sed -i '/exit/i\/bin/sh /usr/bin/check_wan4.sh &' package/base-files/files/etc/rc.local
-          echo -e '\nDYC Build\n'  >> package/base-files/files/etc/banner
+          echo -e '\nFOX Build\n'  >> package/base-files/files/etc/banner
 
       - name: Build FriendlyWrt
         run: |
@@ -136,3 +136,12 @@ jobs:
           asset_path: ./artifact.zip
           asset_name: ${{ steps.assemble_artifact.outputs.release_tag }}-ROM.zip
           asset_content_type: application/zip
+      - name: fox
+        run: |
+          7z a -t7z -r fox.7z friendlywrt-rk3328
+      
+      - name: Upload bin directory
+        uses: actions/upload-artifact@master
+        with:
+          name: OpenWrt_directory
+          path: fox.7z
