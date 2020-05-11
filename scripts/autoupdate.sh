@@ -2,7 +2,7 @@
 echo '选择固件版本'
 echo '1.Minimal'
 echo '2.Lean'
-read -e -p " 请输入数字:" num
+read -p " 请输入数字:" num
 if[["${num}" == "1"]];then
 fox='Minimal'
 elif [["${num}" == "2"]];then
