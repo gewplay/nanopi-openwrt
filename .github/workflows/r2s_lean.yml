@@ -7,7 +7,7 @@ on:
     paths:
       - '.github/workflows/r2s_lean.yml'
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '00 01 * * *'
 
 jobs:
 
@@ -116,6 +116,17 @@ jobs:
           zip -r artifact.zip ./artifact/
           release_tag="R2S-Lean-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
+          
+      - name: fox
+        run: |
+          7z a -t7z -r fox.7z friendlywrt-rk3328
+      
+      - name: Upload bin directory
+        uses: actions/upload-artifact@master
+        with:
+          name: OpenWrt_directory
+          path: fox.7z
+          
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -136,12 +147,4 @@ jobs:
           asset_path: ./artifact.zip
           asset_name: ${{ steps.assemble_artifact.outputs.release_tag }}-ROM.zip
           asset_content_type: application/zip
-      - name: fox
-        run: |
-          7z a -t7z -r fox.7z friendlywrt-rk3328
       
-      - name: Upload bin directory
-        uses: actions/upload-artifact@master
-        with:
-          name: OpenWrt_directory
-          path: fox.7z
