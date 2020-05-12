@@ -119,13 +119,13 @@ jobs:
           
       - name: fox
         run: |
-          7z a -t7z -r fox.7z friendlywrt-rk3328
+          tar -czvf fox.tar.gz friendlywrt-rk3328
       
       - name: Upload bin directory
         uses: actions/upload-artifact@master
         with:
           name: OpenWrt_directory
-          path: fox.7z
+          path: fox.tar.gz
           
       - name: Create Release
         id: create_release
