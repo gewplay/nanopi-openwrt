@@ -2,7 +2,7 @@
 
 ### 发布地址：
 
-https://github.com/klever1988/nanopi-openwrt/releases  
+https://github.com/gewplay/nanopi-openwrt/releases  
 (请记得下载zip包之后解压出里头的固件包再刷，不要拿zip直刷，会失败的！)
 
 ### 编译方式：
