@@ -119,7 +119,10 @@ jobs:
           
       - name: fox
         run: |
-          tar -czvf fox.tar.gz friendlywrt-rk3328
+          tar -czvf fox.tar.gz friendlywrt-rk3328/friendlywrt/bin
+          du -sh *
+          du -h fox.tar.gz
+          du fox.tar.gz
       
       - name: Upload bin directory
         uses: actions/upload-artifact@master
