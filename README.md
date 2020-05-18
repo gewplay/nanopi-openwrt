@@ -18,7 +18,7 @@ Lienol版默认用户名是root, 密码为空
 
 ### 更新说明：
 
-https://github.com/klever1988/nanopi-openwrt/blob/master/CHANGELOG.md
+https://github.com/gewplay/nanopi-openwrt/blob/master/CHANGELOG.md
 
 ### R2S在线升级方法:
 (注意:目前仅支持R2S，仅能升级到minimal版本固件，如果你使用的是Lienol版也不要用此方法升级)  
@@ -29,10 +29,10 @@ opkg install zstd
 ```
 然后下载脚本执行
 ```bash
-wget -qO- https://github.com/klever1988/nanopi-openwrt/raw/master/scripts/autoupdate.sh | sh
+wget -qO- https://github.com/gewplay/nanopi-openwrt/raw/master/scripts/autoupdate.sh | sh
 ```
 (脚本由gary lau提供，非常感谢！)
 
 #### 本固件(minimal版本)NAT基准性能测试：
 
-<img src="https://github.com/klever1988/nanopi-openwrt/raw/master/assets/NAT.jpg" width="600" /><img src="https://raw.githubusercontent.com/klever1988/nanopi-openwrt/master/assets/Acc.jpg" width="250" />
+<img src="https://github.com/gewplay/nanopi-openwrt/raw/master/assets/NAT.jpg" width="600" /><img src="https://raw.githubusercontent.com/gewplay/nanopi-openwrt/master/assets/Acc.jpg" width="250" />
