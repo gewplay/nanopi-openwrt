@@ -2,7 +2,7 @@
 echo '选择固件版本'
 echo '1.Minimal'
 echo '2.Lean'
-read -p " 请输入数字:" num
+read -p "请输入数字:" num
 case "$num" in
 	1)
 	fox='Minimal'
