@@ -163,7 +163,7 @@ jobs:
 
       - name: Add OpenClash
         run: |
-          git clone https://github.com/vernesong/OpenClash.git 
+          git clone -b master https://github.com/vernesong/OpenClash.git 
           mv OpenClash/luci-app-openclash friendlywrt-rk3328/friendlywrt/package
           cd friendlywrt-rk3328/friendlywrt/package/base-files/files
           mkdir -p etc/openclash/core && cd etc/openclash/core
@@ -171,7 +171,7 @@ jobs:
           chmod +x clash
 
       - name: Add Passwall
-        run: |
+        run: | 
           cd friendlywrt-rk3328/friendlywrt
           echo -e '\nsrc-git lienol https://github.com/SuLingGG/openwrt-package' >> feeds.conf.default
           ./scripts/feeds update -a
