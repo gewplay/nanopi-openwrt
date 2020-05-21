@@ -91,4 +91,3 @@ CONFIG_PACKAGE_rclone-webui-react=y
 
 CONFIG_PACKAGE_luci-app-advancedsetting
 CONFIG_PACKAGE_luci-app-smartdns
-CONFIG_PACKAGE_luci-app-passwall
