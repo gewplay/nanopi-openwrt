@@ -98,6 +98,11 @@ jobs:
           echo -e '\nFOX Build\n'  >> package/base-files/files/etc/banner
           mv ../../scripts/autoupdate.sh package/base-files/files/root/au.sh && chmod +x package/base-files/files/root/au.sh
 
+      - name: add package
+        run: |
+          cd friendlywrt-rk3328/friendlywrt/package
+          git clone https://github.com/kenzok8/openwrt-packages.git
+          
       - name: Build FriendlyWrt
         run: |
           cd friendlywrt-rk3328
