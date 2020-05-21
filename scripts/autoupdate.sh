@@ -37,7 +37,7 @@ if [ -f /mnt/mmcblk0p2/artifact/FriendlyWrt*.img.gz ]; then
 fi
 lodev=$(losetup -f)
 mkdir /mnt/img
-losetup $lodev /mnt/mmcblk0p2/FriendlyWrt.img
+losetup -o 100663296 $lodev /mnt/mmcblk0p2/FriendlyWrt.img
 mount $lodev /mnt/img
 echo -e '\e[92m解压已完成，准备编辑镜像文件，写入备份信息\e[0m'
 cd /mnt/img
